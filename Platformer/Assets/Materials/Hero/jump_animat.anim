@@ -27,7 +27,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 1779739cc89e30547b2b67f79844462d, type: 3}
     - time: 0.1
       value: {fileID: 21300000, guid: ff199b9f65c5e36448754abc0491e7a0, type: 3}
-    - time: 0.6
+    - time: 1.1333333
       value: {fileID: 21300000, guid: a84f909120761ce44ba95014a047b299, type: 3}
     attribute: m_Sprite
     path: Telo
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6166667
+    m_StopTime: 1.15
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
