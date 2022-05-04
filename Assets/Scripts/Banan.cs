@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Banan : Entity
 {
+
     private Vector3 dir;
     private SpriteRenderer sprite;
 

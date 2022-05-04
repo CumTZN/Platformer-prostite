@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Tentacl : Entity
 {
+    private void Start()
+    {
+        lives = 3;
+    }
 
-    [SerializeField] private int lives = 3;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
