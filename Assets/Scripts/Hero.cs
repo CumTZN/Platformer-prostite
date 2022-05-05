@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
-    [SerializeField] private int lives = 5;
+    [SerializeField] private int health = 5;
+    [SerializeField] private int lives;
     [SerializeField] private float jampForce = 0.4f;
     private bool isGrounded = false;
+
+    [SerializeField] private Image[] hearts;
+
+    [SerializeField] private Sprite Hearth;
+    [SerializeField] private Sprite Ded_hearth;
 
     public bool isAttacking = false;
     public bool isRecharged = true;
@@ -41,6 +48,8 @@ public class Hero : MonoBehaviour
 
     private void Awake()
     {
+        lives = 3;
+        health = lives;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -68,7 +77,21 @@ public class Hero : MonoBehaviour
             Jump();
         if (Input.GetButtonDown("Fire1"))
             Attack();
+
+        if (health > lives)
+            health = lives;
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < health)
+                hearts[i].sprite = Hearth;
+            else
+                hearts[i].sprite = Ded_hearth;
+        }
+
     }
+
+
     private void Run()
     {
         if (isGrounded) State = States.Run;
